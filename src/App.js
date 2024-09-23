@@ -15,7 +15,7 @@ function App() {
         <h4>블로그</h4>
       </div>
       <div className = "list">
-        <h4>{글제목1}</h4>
+        <h4>{글제목1} <span>👍</span> 0 </h4>
         <p>2월 17일 발행</p>
       </div>
       <div className = "list">
@@ -26,6 +26,7 @@ function App() {
         <h4>{글제목3}</h4>
         <p>2월 17일 발행</p>
       </div>
+
 
     </div>
   );
