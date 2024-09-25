@@ -11,6 +11,7 @@ function App() {
   ]);
 
   let [좋아요, 좋아요변경] = useState(0);
+  let [modal,setModal] = useState(false);
 
   return (
     <div className="App">
@@ -18,8 +19,10 @@ function App() {
         <h4>블로그</h4>
       </div>
       <div className="list">
-        <h4>
-          {글제목[0]}{" "}
+        <h4 onClick={()=>{
+          modal != true ? setModal(true) : setModal(false) 
+        }}>
+          {글제목[0]}
           <span
             onClick={() => {
               좋아요변경(좋아요 + 1);
@@ -32,11 +35,18 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{글제목[1]}</h4>
+        <h4 onClick={()=>{
+            modal != true ? setModal(true) : setModal(false) 
+          }}>
+          {글제목[1]}
+        </h4>
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{글제목[2]}</h4>
+        <h4 onClick={()=>{
+          modal != true ? setModal(true) : setModal(false) 
+        }}>{글제목[2]}
+        </h4>
         <p>2월 17일 발행</p>
       </div>
 
@@ -50,7 +60,20 @@ function App() {
       >
         버튼
       </button>
+      {modal == true ? <Modal></Modal> : null}
     </div>
   );
 }
 export default App;
+
+function Modal() {
+  return(
+    <div className="modal">
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
+    </div>
+  )
+}
+
+// 리액트 무엇이냐 . 

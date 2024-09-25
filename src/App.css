@@ -15,3 +15,11 @@
   text-align: left;
   border-bottom: 1px solid grey;
 }
+
+.modal {
+  background: #eee;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 20px;
+
+}
