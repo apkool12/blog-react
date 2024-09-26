@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function App() {
   let post = "강남 우동 맛집";
-  let [글제목, b] = useState([
+  let [글제목, 글제목변경] = useState([
     "남자 코트 추천",
     "강남 우동맛집",
     "파이썬 독학",
@@ -55,23 +55,29 @@ function App() {
         onClick={() => {
           let copy = [...글제목];
           copy.sort();
-          b(copy);
+          글제목변경(copy);
         }}
       >
         버튼
       </button>
-      {modal == true ? <Modal></Modal> : null}
+      {modal == true ? <Modal 글제목 = {글제목} 글제목변경 = {글제목변경}> </Modal> : null}
     </div>
   );
 }
 export default App;
 
-function Modal() {
+function Modal(props) {
   return(
     <div className="modal">
       <h4>제목</h4>
       <p>날짜</p>
       <p>상세내용</p>
+
+      <button onClick={ () => {
+        let copy = [...props.글제목];
+        copy[0] = '여자코트추천';
+        props.글제목변경(copy);
+      }}> 글 수정하기 </button>
     </div>
   )
 }
