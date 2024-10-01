@@ -49,15 +49,12 @@ function App() {
             >
               👍 {emote[i]}
             </span>
-            <p>2월 17일 발행</p>
+            <p>{month}월 {date}일 발행</p>
           </div>
         ))
       ) : (
         <>
           <p>아직 작성된 글이 없습니다. 글을 추가해보세요!</p>
-          <div> 
-            <button onClick = { () => {console.log(month + "월" + date + "일")}}>오늘 날짜</button>
-          </div>
         </>
       )}
 
