@@ -8,6 +8,10 @@ function App() {
   let [modal, setModal] = useState(false);
   let [selectedTitle, setSelectedTitle] = useState(0);
 
+  let today = new Date();
+  let month  = today.getMonth() + 1;
+  let date = today.getDate();
+
   function addTitle(title) {
     if (title !== '') {
       let newTitles = [...name, title];
@@ -22,7 +26,7 @@ function App() {
       <div className="Black-nav">
         <h4>Blog</h4>
       </div>
-
+      
       <div>
         <input
           type="text"
@@ -49,7 +53,12 @@ function App() {
           </div>
         ))
       ) : (
-        <p>아직 작성된 글이 없습니다. 글을 추가해보세요!</p>
+        <>
+          <p>아직 작성된 글이 없습니다. 글을 추가해보세요!</p>
+          <div> 
+            <button onClick = { () => {console.log(month + "월" + date + "일")}}>오늘 날짜</button>
+          </div>
+        </>
       )}
 
       {name.length > 0 && (
